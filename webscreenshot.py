@@ -25,13 +25,15 @@ else:
 
         file_name = typer.prompt("File Name to save screenshot in 📁") + '.png'
 
-        r = f"https://api.apiflash.com/v1/urltoimage?access_key=d9bdb788d78847038537b7b0bed4f066&wait_until=page_loaded&url=https://{domain}&no_ads=false&fresh=true&format=png"
+        r = f"https://api.apiflash.com/v1/urltoimage?access_key=d9bdb788d78847038537b7b0bed4f066&wait_until=page_loaded&url=https://{domain}&no_ads=false&fresh=true&format=png&quality=100"
 
         wget.download(r, file_name)
 
         typer.secho("\nScreenshot is saved at:", fg=typer.colors.BRIGHT_RED)
 
-        file_path = os.getcwd() + "/" + file_name
+        a = r"\n"
+
+        file_path = os.getcwd() + a[0] + file_name
 
         typer.secho(file_path, fg=typer.colors.BRIGHT_RED)
 
